@@ -1,0 +1,182 @@
+/* 기본 폰트 설정 */
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+/* ----------------------------------------- 기본 레이아웃 설정 */
+body {
+  background-color: #f9f9f9;
+  padding: 20px 300px;
+}
+main {
+  display: flex;
+}
+aside {
+  flex: 1;
+}
+.aside-text{
+  font-size: 1.2rem;
+}
+/* ----------------------------------------- 메인 헤더 및 로고 */
+.main-text {
+  border: 1px solid #eaeaea;
+  background-color: white;
+  margin-bottom: 24px;
+}
+.main-text h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.main-text h4 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+/* ----------------------------------------- 요리 목록 컨테이너 */
+.content-container {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 4px;
+  border: 1px solid #eaeaea;
+  background-color: white;
+}
+.foodSeperate {
+  background-color: lightgrey;
+}
+/* ----------------------------------------- 요리 입력 컨테이너 */
+#recipe-input-form {
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+  display: none;
+}
+/* ----------------------------------------- 요리 출력 컨테이너*/
+#recipe-container {
+  width: 50%;
+  display: none;
+}
+
+/* ----------------------------------------- 레시피 추가 버튼*/
+#add-recipe {
+  margin-top: 15px;
+  width: 193px;
+  background-color: #1890ff;
+  border-radius: 4px;
+  border: 1px solid #41a3fe;
+  color: white;
+}
+/* ----------------------------------------- 레시피 삭제 버튼*/
+#del-recipe {
+  margin-bottom: 15px;
+  width: 60px;
+  background-color: #1890ff;
+  border-radius: 4px;
+  border: 1px solid #41a3fe;
+  color: white;
+}
+/* ----------------------------------------- 레시피 추가 form 출력 컨테이너 */
+.input-container {
+  width: 100%;
+  text-align: end;
+}
+/* ----------------------------------------- 레시피 추가 form 출력 버튼 */
+.input-container button {
+  background-color: #1890ff;
+  border-radius: 4px;
+  border: 1px solid #41a3fe;
+  color: white;
+}
+/* ----------------------------------------- 레시피 목록 컨테이너 */
+.recipe-list-container {
+  text-align: center;
+  margin-top: 24px;
+  border-radius: 4px;
+  border: 1px solid #eaeaea;
+  background-color: white;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+/* ----------------------------------------- 레시피 목록 */
+.list {
+  padding-left: 50px;
+}
+/* ----------------------------------------- 레시피 */
+.list-item {
+  padding-left: 20px;
+  text-align: left;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.list-item:hover {
+  color: #1890ff;
+}
+/* ----------------------------------------- 요리 타입 입력 셀렉터 */
+#type {
+  width: 193px;
+}
+
+.recipeSite {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  margin: 10px 0;
+}
+
+.recipeSite:hover {
+  color: #1890ff;
+}
+@media (max-width: 768px)
+{ 
+  body {
+    padding: 20px 20px;
+  }
+  main {
+    display: block;
+  }
+  /* ----------------------------------------- 요리 방법 출력 컨테이너*/
+  #recipe-container {
+    width: 80%;
+    display: none;
+  }
+  /* ----------------------------------------- 요리 목록 컨테이너 */
+  .container {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    margin-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #eaeaea;
+    background-color: white;
+  }
+  /* ----------------------------------------- 레시피 목록 */
+  .list {
+    padding-left: 80px;
+  }
+
+  /* ----------------------------------------- 레시피 */
+  .list-item {
+    font-size: 1rem;
+  }
+
+  /* ----------------------------------------- 레시피 추가 form 출력 버튼 */
+  .input-container button {
+    background-color: #1890ff;
+    border-radius: 4px;
+    border: 1px solid #41a3fe;
+    padding: 5px 10px;
+    color: white;
+  }
+  /* ----------------------------------------- 요리 목록 컨테이너 */
+  .content-container {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
