@@ -14,7 +14,7 @@ window.onload = function() {
   recipe.cookingProcess1 = document.getElementById('cookingProcess1').value;
   recipe.cookingProcess2 = document.getElementById('cookingProcess2').value;
   recipe.cookingProcess3 = document.getElementById('cookingProcess3').value;
-  recipe.cookingProcess4 = document.getElementById('cookingProcess4').value;  
+  recipe.cookingProcess4 = document.getElementById('cookingProcess4').value; 
   recipes.push(recipe);
   
   const input = document.querySelector('#name');
@@ -44,6 +44,7 @@ window.onload = function() {
         if (this.innerHTML == recipes[i].name) {
 
           document.getElementById('nameText').innerHTML = recipes[i].name;
+          document.getElementById('imgSrc').src = recipes[i].imageSrc;
           document.getElementById('typeText').innerHTML = recipes[i].type;
           document.getElementById('materialText').innerHTML = recipes[i].material;
           document.getElementById('cookingTimeText').innerHTML = recipes[i].cookingTime;
@@ -61,10 +62,12 @@ window.onload = function() {
 
 // 레시피 (객체)
 var recipe = {};
+
 // 레시피 목록 (배열)
 var recipes = [
   {
   name: "된장찌개",
+  imageSrc: "https://t1.daumcdn.net/cfile/tistory/99D2803359B2498C15",
   type: "한식",
   material: "된장(시판용 된장) 2큰술(20g), 멸치(국물용 멸치) 20마리(20g), 물 3컵(600ml), 고춧가루 약간, 무 35g, 청양고추 1개(10g), 애호박 1/9개(30g), 두부 50g, 팽이버섯 20g",
   cookingTime: "30분",
@@ -75,6 +78,7 @@ var recipes = [
   },
   {
   name : "김치찌개",
+  imageSrc: "https://t1.daumcdn.net/cfile/tistory/990D48485CEBD75D1D",
   type: "한식",
   material: "배추김치 500g, 돼지고기(삼겹살) 200g (또는 돼지갈비 400g), 두부 1모(300g), 실파 4½대(45g), 식용유 4큰술, 물 4컵, 국간장 2큰술, 설탕 1큰술, 소금 약간",
   cookingTime: "30분",
@@ -85,6 +89,7 @@ var recipes = [
   },
   {
   name : "비빔밥",
+  imageSrc: "https://lh3.googleusercontent.com/proxy/oUxgK7XRV0cPMZs747TMSFuW6MFzk7y26W825tlA31bkBavEJlnncpneybn3MkXtjvzUbwtk3XJOSZKZCBO1u1Ho5yUu_YfwxypQPYxpT-bqmXdJlXvNJOjr0vCeuqnn0oazw6JHSW9S2lCWWa4",
   type: "한식",
   material: "멥쌀 450g(2 1/2컵), 물 600g(3컵), 애호박 300g(1개), 소금 1g(1/4작은술), 껍질 벗긴 도라지 200g, 소금 4g(1작은술), 쇠고기(우둔) 120g, 불린 고사리 200g",
   cookingTime: "30분",
@@ -95,6 +100,7 @@ var recipes = [
   },
   {
   name : "불고기",
+  imageSrc: "https://cdn.shopify.com/s/files/1/0003/6188/9820/products/beef_bulgogi_0001@2x.jpg?v=1536030333",
   type: "한식",
   material: "소고기(등심 또는 안심) 500g, 양파 200g(2개), 대파 20g(1대), 팽이버섯 50g, 곁들임 채소(상추외 잎채소 100g, 풋고추 2개, 깐마늘 5쪽), 쌈장 42g(2TS)",
   cookingTime: "15분",
@@ -105,6 +111,7 @@ var recipes = [
   },
   {
   name : "초밥",
+  imageSrc: "https://www.portopia.co.jp/src/uploads/restaurantImage/1-1000/215.jpg",
   type: "일식",
   material: "초밥용 생선회(종류는 기호에 따라) 800g, 쌀 3컵, 다시마 1조각, 고추냉이(와사비) 30g",
   cookingTime: "40분",
@@ -115,6 +122,7 @@ var recipes = [
   },
   {
   name : "돈가스",
+  imageSrc: "https://post-phinf.pstatic.net/MjAyMDA0MTZfMjY3/MDAxNTg2OTk5MzYwOTMw.YZk3XJCkJqOrZmSzXTGfnXcfoj5CoLQfY9kEBhBmlyYg.WdEgjt1SmPLlCfi8nmVMB79FymTDi3ApEfQJrGF57Acg.JPEG/1.jpg?type=w1200",
   type: "일식",
   material: "돈까스 등심 3장, 소금 약간, 후추 약간, 맛술 1 큰 술, 계란 2개, 밀가루 1/2컵, 빵가루 1컵, 식용유 2컵",
   cookingTime: "40분",
@@ -125,6 +133,7 @@ var recipes = [
   },
   {
   name : "자장면",
+  imageSrc: "https://t1.daumcdn.net/liveboard/fclc/537979e129a94f40a9d55ebf3ba82496.JPG",
   type: "중식",
   material: "미국산 돼지고기 목전지 350g, 양파 2개, 배춧잎 10장, 대파 1대, 춘장 1+1/2큰술, 다진 생강 1/2큰술, 다진 마늘 1큰술, 간장 2큰술, 설탕 1+1/2큰술, 식용유, 굴소스 1큰술, 후추, 소금, 물 1+1/2컵, 물 전분, 생면, 완두콩",
   cookingTime: "40분",
@@ -135,6 +144,7 @@ var recipes = [
   },
   {
   name : "짬뽕",
+  imageSrc: "https://www.cj.co.kr/images/theKitchen/PHON/0000001657/0000006119/0000001657.jpg",
   type: "중식",
   material: "오징어 1마리, 새우 6-7마리, 홍합, 애호박, 양배추(넉넉하게), 양파 1/2개, 느타리버섯, 홍고추, 숙주 또는 콩나물, 베트남 건고추 4-5개, 대파, 간장 4숟가락, 굴소스 2숟가락, 다진 마늘 1숟가락, 후추, 고추가루 반컵(종이컵),",
   cookingTime: "40분",
@@ -145,6 +155,7 @@ var recipes = [
   },
   {
   name : "탕수육",
+  imageSrc: "https://recipe1.ezmember.co.kr/cache/recipe/2020/07/05/2e0e7c019f283bcc36d34cdee876d15b1.jpg",
   type: "중식",
   material: "돼지등심 400g, 감자전분, 계란, 후추, 소금, 미림, 양파, 당근, 호박, 목이버섯, 간장, 식초, 설탕",
   cookingTime: "40분",
@@ -155,6 +166,7 @@ var recipes = [
   },
   {
   name : "알리오올리오",
+  imageSrc: "https://static.wtable.co.kr/image-resize/production/service/recipe/628/4x3/0ed2f788-3200-442f-8f2d-69d1645dd46a.jpg",
   type: "양식",
   material: "파스타면, 마늘 5개, 페퍼론치노 3개, 소금, 올리브유, 파마산치즈가루, 파슬리",
   cookingTime: "20분",
@@ -166,6 +178,7 @@ var recipes = [
 
 ];
 
+// 레시피 삭제 버튼
 delRecipeBtn.addEventListener('click', () => {
 
   var text = document.getElementById('nameText').innerHTML
@@ -219,16 +232,9 @@ delRecipeBtn.addEventListener('click', () => {
 
 });
 
-// 레시피 추가 버튼 눌렀을 때
+
+// 레시피 추가 버튼
 addRecipeBtn.addEventListener('click', () => {
-  const ul = document.getElementById('koreaFood');
-  
-  // 2. <li> 목록 선택
-  const items = ul.getElementsByTagName('li');
-  
-  // 3. <li> 목록 중 첫번째 item 삭제
-  
-  items[0].remove();
 
   recipe = {};
   document.getElementById('recipe-input-form').style.display = 'none';
@@ -257,34 +263,37 @@ addRecipeBtn.addEventListener('click', () => {
       col.addEventListener("click", recipeCall);
   });
 
-  function recipeCall(){
+});
+
+// 레시피 불러오는 함수
+function recipeCall(){
+  
+  if (document.getElementById('recipe-input-form').style.display == 'block'){}
+
+  else
+  {
+    for (var i in recipes){
     
-    if (document.getElementById('recipe-input-form').style.display == 'block'){}
+      if (this.innerHTML == recipes[i].name) {
 
-    else
-    {
-      for (var i in recipes){
-      
-        if (this.innerHTML == recipes[i].name) {
+        document.getElementById('nameText').innerHTML = recipes[i].name;
+        document.getElementById('typeText').innerHTML = recipes[i].type;
+        document.getElementById('materialText').innerHTML = recipes[i].material;
+        document.getElementById('cookingTimeText').innerHTML = recipes[i].cookingTime;
+        document.getElementById('cookingProcess1Text').innerHTML = recipes[i].cookingProcess1;
+        document.getElementById('cookingProcess2Text').innerHTML = recipes[i].cookingProcess2;
+        document.getElementById('cookingProcess3Text').innerHTML = recipes[i].cookingProcess3;
+        document.getElementById('cookingProcess4Text').innerHTML = recipes[i].cookingProcess4;
 
-          document.getElementById('nameText').innerHTML = recipes[i].name;
-          document.getElementById('typeText').innerHTML = recipes[i].type;
-          document.getElementById('materialText').innerHTML = recipes[i].material;
-          document.getElementById('cookingTimeText').innerHTML = recipes[i].cookingTime;
-          document.getElementById('cookingProcess1Text').innerHTML = recipes[i].cookingProcess1;
-          document.getElementById('cookingProcess2Text').innerHTML = recipes[i].cookingProcess2;
-          document.getElementById('cookingProcess3Text').innerHTML = recipes[i].cookingProcess3;
-          document.getElementById('cookingProcess4Text').innerHTML = recipes[i].cookingProcess4;
-
-          document.getElementById('recipe-container').style.display = 'block';
-        }
+        document.getElementById('recipe-container').style.display = 'block';
       }
     }
   }
-});
+}
 
 // 레시피 추가 form 띄우기
 showRecipeAdd.addEventListener('click', () => {
+
   if (document.getElementById('recipe-container').style.display == 'block') {
     document.getElementById('recipe-container').style.display = 'none';
   }
@@ -329,8 +338,4 @@ function addRecipe(text, type) {
   
     list.appendChild(newRecipe);
   }
-}
-
-function delRecipe(text) {
-
 }
