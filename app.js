@@ -2,68 +2,9 @@ const addRecipeBtn = document.querySelector('#add-recipe');
 const delRecipeBtn = document.querySelector('#del-recipe');
 const showRecipeAdd = document.querySelector('#recipe-add-button');
 
-// 웹 페이지가 로드 되었을 때 레시피 목록 버튼 초기화
-window.onload = function() {
-  recipe = {};
-  document.getElementById('recipe-input-form').style.display = 'none';
-
-  recipe.name = document.getElementById('name').value;
-  recipe.type = document.getElementById('type').value;
-  recipe.material = document.getElementById('material').value;
-  recipe.cookingTime = document.getElementById('cookingTime').value;
-  recipe.cookingProcess1 = document.getElementById('cookingProcess1').value;
-  recipe.cookingProcess2 = document.getElementById('cookingProcess2').value;
-  recipe.cookingProcess3 = document.getElementById('cookingProcess3').value;
-  recipe.cookingProcess4 = document.getElementById('cookingProcess4').value; 
-  recipes.push(recipe);
-  
-  const input = document.querySelector('#name');
-  if (recipe.name.trim() !== '') {
-    addRecipe(recipe.name.trim(), recipe.type);
-    input.value = '';
-    input.focus();
-  }
-
-  var target = document.querySelectorAll(".list-item");
-  console.log(target);
-
-  [].forEach.call(target, function(col){
-      col.addEventListener("click", recipeCall);
-  });
-
-  function recipeCall(){
-    
-    if (document.getElementById('recipe-input-form').style.display == 'block')
-    {
-      alert("입력중인 요리를 마무리 해주세요.");
-    }
-    else
-    {
-      for (var i in recipes){
-      
-        if (this.innerHTML == recipes[i].name) {
-
-          document.getElementById('nameText').innerHTML = recipes[i].name;
-          document.getElementById('imgSrc').src = recipes[i].imageSrc;
-          document.getElementById('typeText').innerHTML = recipes[i].type;
-          document.getElementById('materialText').innerHTML = recipes[i].material;
-          document.getElementById('cookingTimeText').innerHTML = recipes[i].cookingTime;
-          document.getElementById('cookingProcess1Text').innerHTML = recipes[i].cookingProcess1;
-          document.getElementById('cookingProcess2Text').innerHTML = recipes[i].cookingProcess2;
-          document.getElementById('cookingProcess3Text').innerHTML = recipes[i].cookingProcess3;
-          document.getElementById('cookingProcess4Text').innerHTML = recipes[i].cookingProcess4;
-
-          document.getElementById('recipe-container').style.display = 'block';
-        }
-      }
-    }
-  }
-}
-
-// 레시피 (객체)
 var recipe = {};
 
-// 레시피 목록 (배열)
+// 레시피 목록
 var recipes = [
   {
   name: "된장찌개",
@@ -178,6 +119,66 @@ var recipes = [
 
 ];
 
+// 웹 페이지가 로드 되었을 때 레시피 목록 버튼 초기화
+window.onload = function() {
+  recipe = {};
+  document.getElementById('recipe-input-form').style.display = 'none';
+
+  recipe.name = document.getElementById('name').value;
+  recipe.type = document.getElementById('type').value;
+  recipe.material = document.getElementById('material').value;
+  recipe.cookingTime = document.getElementById('cookingTime').value;
+  recipe.cookingProcess1 = document.getElementById('cookingProcess1').value;
+  recipe.cookingProcess2 = document.getElementById('cookingProcess2').value;
+  recipe.cookingProcess3 = document.getElementById('cookingProcess3').value;
+  recipe.cookingProcess4 = document.getElementById('cookingProcess4').value; 
+  recipes.push(recipe);
+  
+  const foodName = document.querySelector('#name');
+  if (recipe.name.trim() !== '') {
+    addRecipe(recipe.name.trim(), recipe.type);
+    foodName.value = '';
+    foodName.focus();
+  }
+
+  var listItem = document.querySelectorAll(".list-item");
+  console.log(listItem);
+
+  [].forEach.call(listItem, function(recipeItem){
+      recipeItem.addEventListener("click", recipeCall);
+  });
+
+  function recipeCall(){
+    
+    if (document.getElementById('recipe-input-form').style.display == 'block')
+    {
+      alert("입력중인 요리를 마무리 해주세요.");
+    }
+    else
+    {
+      for (var i in recipes){
+      
+        if (this.innerHTML == recipes[i].name) {
+
+          document.getElementById('nameText').innerHTML = recipes[i].name;
+          document.getElementById('imgSrc').src = recipes[i].imageSrc;
+          document.getElementById('typeText').innerHTML = recipes[i].type;
+          document.getElementById('materialText').innerHTML = recipes[i].material;
+          document.getElementById('cookingTimeText').innerHTML = recipes[i].cookingTime;
+          document.getElementById('cookingProcess1Text').innerHTML = recipes[i].cookingProcess1;
+          document.getElementById('cookingProcess2Text').innerHTML = recipes[i].cookingProcess2;
+          document.getElementById('cookingProcess3Text').innerHTML = recipes[i].cookingProcess3;
+          document.getElementById('cookingProcess4Text').innerHTML = recipes[i].cookingProcess4;
+
+          document.getElementById('recipe-container').style.display = 'block';
+        }
+      }
+    }
+  }
+}
+
+
+
 // 레시피 삭제 버튼
 delRecipeBtn.addEventListener('click', () => {
 
@@ -227,8 +228,8 @@ delRecipeBtn.addEventListener('click', () => {
       }
     }
   }
+
   document.getElementById('recipe-container').style.display = 'none';
-  console.log(recipes);
 
 });
 
@@ -240,6 +241,7 @@ addRecipeBtn.addEventListener('click', () => {
   document.getElementById('recipe-input-form').style.display = 'none';
 
   recipe.name = document.getElementById('name').value;
+  recipe.imageSrc = document.getElementById('src').value;
   recipe.type = document.getElementById('type').value;
   recipe.material = document.getElementById('material').value;
   recipe.cookingTime = document.getElementById('cookingTime').value;
@@ -248,19 +250,17 @@ addRecipeBtn.addEventListener('click', () => {
   recipe.cookingProcess3 = document.getElementById('cookingProcess3').value;
   recipe.cookingProcess4 = document.getElementById('cookingProcess4').value;  
   recipes.push(recipe);
-  
-  const input = document.querySelector('#name');
+
+  const foodName = document.querySelector('#name');
   if (recipe.name.trim() !== '') {
     addRecipe(recipe.name.trim(), recipe.type);
-    input.value = '';
-    input.focus();
+    foodName.value = '';
   }
 
-  var target = document.querySelectorAll(".list-item");
-  console.log(target);
+  var listItem = document.querySelectorAll(".list-item");
 
-  [].forEach.call(target, function(col){
-      col.addEventListener("click", recipeCall);
+  [].forEach.call(listItem, function(recipeItem){
+      recipeItem.addEventListener("click", recipeCall);
   });
 
 });
@@ -285,6 +285,13 @@ function recipeCall(){
         document.getElementById('cookingProcess3Text').innerHTML = recipes[i].cookingProcess3;
         document.getElementById('cookingProcess4Text').innerHTML = recipes[i].cookingProcess4;
 
+        if (recipes[i].imageSrc == '') {
+          document.getElementById('imgSrc').style.display = 'none';
+        } else { 
+          document.getElementById('imgSrc').style.display = 'inline-block';
+          document.getElementById('imgSrc').src = recipes[i].imageSrc;
+        }
+
         document.getElementById('recipe-container').style.display = 'block';
       }
     }
@@ -293,13 +300,10 @@ function recipeCall(){
 
 // 레시피 추가 form 띄우기
 showRecipeAdd.addEventListener('click', () => {
-
   if (document.getElementById('recipe-container').style.display == 'block') {
     document.getElementById('recipe-container').style.display = 'none';
   }
-
   document.getElementById('recipe-input-form').style.display = 'block';
-
 });
 
 // 레시피 추가 하기
