@@ -89,7 +89,7 @@ var recipes = [
   },
   {
   name : "비빔밥",
-  imageSrc: "https://lh3.googleusercontent.com/proxy/oUxgK7XRV0cPMZs747TMSFuW6MFzk7y26W825tlA31bkBavEJlnncpneybn3MkXtjvzUbwtk3XJOSZKZCBO1u1Ho5yUu_YfwxypQPYxpT-bqmXdJlXvNJOjr0vCeuqnn0oazw6JHSW9S2lCWWa4",
+  imageSrc: "https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/S9Y/image/76pr0EfQi6R21MMIyzefN9hiqIU.jpg",
   type: "한식",
   material: "멥쌀 450g(2 1/2컵), 물 600g(3컵), 애호박 300g(1개), 소금 1g(1/4작은술), 껍질 벗긴 도라지 200g, 소금 4g(1작은술), 쇠고기(우둔) 120g, 불린 고사리 200g",
   cookingTime: "30분",
